@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@layer components {
+    .journal-input {
+        @apply w-full rounded-lg border border-white/10 bg-slate-950 px-3 py-2 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-amber-300 focus:ring-2 focus:ring-amber-300/20;
+    }
+
+    .journal-label {
+        @apply block text-sm font-medium text-slate-300;
+    }
+
+    .calculation-card {
+        @apply rounded-xl border border-white/10 bg-slate-950/70 p-4;
+    }
+
+    .calculation-card span, .metric-label {
+        @apply text-xs font-medium uppercase tracking-wider text-slate-500;
+    }
+
+    .calculation-card strong {
+        @apply mt-1 block text-xl font-bold text-white;
+    }
+
+    .metric-value {
+        @apply mt-1 text-sm font-semibold text-slate-200;
+    }
+
+    .journal-copy {
+        @apply mt-2 whitespace-pre-line text-sm leading-6 text-slate-300;
+    }
+
+    .badge {
+        @apply inline-flex rounded-full px-2.5 py-1 text-xs font-bold tracking-wide;
+    }
+
+    .badge-buy, .badge-win { @apply bg-emerald-400/15 text-emerald-300; }
+    .badge-sell, .badge-loss { @apply bg-rose-400/15 text-rose-300; }
+    .badge-open { @apply bg-sky-400/15 text-sky-300; }
+    .badge-breakeven { @apply bg-slate-400/15 text-slate-300; }
+}
